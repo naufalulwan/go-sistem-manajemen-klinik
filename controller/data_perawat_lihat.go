@@ -1,9 +1,10 @@
 package controller
 
 import (
+	"go_smk/model"
+
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
-	"heroku.com/model"
 )
 
 type per struct {
@@ -28,7 +29,7 @@ func Data_perawat_lihat(c *gin.Context) {
 		db.Where("id = ?", perawat[i].Id_user).Find(&user)
 		new := per{
 			Id:            perawat[i].Id_user,
-			Nama:          user.Nama,
+			Nama:          perawat[i].Nama,
 			Sip:           perawat[i].Sip,
 			Jenis_kelamin: perawat[i].Jenis_kelamin,
 			Poli:          perawat[i].Poli,

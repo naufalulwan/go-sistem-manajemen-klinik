@@ -9,15 +9,15 @@ import (
 )
 
 const (
-	host     = "ec2-3-224-8-189.compute-1.amazonaws.com"
-	user     = "mbakdsfqzwdlfw"
-	password = "fff010e514d545f61dbd217951c2a3ef81fc2ef85f0349f015459d4f26b570e5"
-	dbname   = "dfrk4g2r7718iv"
-	post     = 5432
+	host     = "localhost"
+	user     = "postgres"
+	password = "123"
+	dbname   = "manajemen_klinik"
+	port     = 5432
 )
 
 func SetupModels() *gorm.DB {
-	var dsn = fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%d sslmode=require TimeZone=Asia/Jakarta", host, user, password, dbname, post)
+	var dsn = fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%d sslmode=disable TimeZone=Asia/Jakarta", host, user, password, dbname, port)
 	db, err := gorm.Open("postgres", dsn)
 	if err != nil {
 		panic(err)

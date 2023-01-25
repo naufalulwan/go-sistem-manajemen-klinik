@@ -1,9 +1,10 @@
 package controller
 
 import (
+	"go_smk/model"
+
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
-	"heroku.com/model"
 )
 
 type edit_data struct {

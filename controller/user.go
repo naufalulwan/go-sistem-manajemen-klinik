@@ -1,9 +1,10 @@
 package controller
 
 import (
+	"go_smk/model"
+
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
-	"heroku.com/model"
 )
 
 type GetUser struct {
@@ -150,6 +151,7 @@ func PostDataUser(c *gin.Context) {
 		Password: input.Password,
 		Level:    input.Level,
 	}
+
 	if pekerjaan {
 		db.Create(&create)
 		var mod model.User
@@ -158,6 +160,7 @@ func PostDataUser(c *gin.Context) {
 		if input.Level == "Dokter" {
 			new := model.Dokter{
 				Id_user: mod.Id,
+				Nama:    input.Nama,
 			}
 			db.Create(&new)
 			message = "Dokter " + input.Nama + " diharuskan melengkapi data sendiri"
@@ -165,6 +168,7 @@ func PostDataUser(c *gin.Context) {
 		if input.Level == "Perawat" {
 			new := model.Perawat{
 				Id_user: mod.Id,
+				Nama:    input.Nama,
 			}
 			db.Create(&new)
 			message = "Perawat " + input.Nama + " diharuskan melengkapi data sendiri"

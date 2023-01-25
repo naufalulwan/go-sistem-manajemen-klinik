@@ -16,6 +16,7 @@ type Pasien struct {
 type Dokter struct {
 	Id_user        int    `json:"id_user"`
 	Sip            string `json:"sip"`
+	Nama           string `json:"nama_dokter"`
 	Poli           string `json:"poli"`
 	Jenis_kelamin  string `json:"jenis_kelamin"`
 	Jadwal_praktek string `json:"jadwal_praktek"`
@@ -36,6 +37,7 @@ type Rekam_medis struct {
 type Perawat struct {
 	Id_user       int    `json:"id_user"`
 	Sip           string `json:"sip"`
+	Nama          string `json:"nama_perawat"`
 	Jenis_kelamin string `json:"jenis_kelamin"`
 	Poli          string `json:"poli"`
 	Jadwal_kerja  string `json:"jadwal_kerja"`

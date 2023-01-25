@@ -7,9 +7,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 
+	"go_smk/controller"
+	"go_smk/model"
+
 	"github.com/joho/godotenv"
-	"heroku.com/controller"
-	"heroku.com/model"
 )
 
 func main() {
@@ -73,7 +74,7 @@ func main() {
 
 	godotenv.Load()
 	port := os.Getenv("PORT")
-	var dns = fmt.Sprintf("0.0.0.0:%s", port)
+	var dns = fmt.Sprintf("127.0.0.1:%s", port)
 
 	r.Run(dns)
 }

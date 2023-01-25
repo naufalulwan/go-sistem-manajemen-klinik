@@ -3,9 +3,10 @@ package controller
 import (
 	"strconv"
 
+	"go_smk/model"
+
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
-	"heroku.com/model"
 )
 
 type rawat_jalan struct {

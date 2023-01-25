@@ -4,9 +4,10 @@ import (
 	"fmt"
 	"time"
 
+	"go_smk/model"
+
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
-	"heroku.com/model"
 )
 
 type tambah_data struct {
